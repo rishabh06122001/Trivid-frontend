@@ -13,7 +13,7 @@ const SuperAdmin = () => {
   const fetchDetails = async () => {
     try {
       const res = await axios.get(
-        "https://trivid-backend.onrender.com/api/v1/superadmin/details",
+        "http://localhost:4000/api/v1/superadmin/details",
         {
           withCredentials: true,
         }
@@ -30,7 +30,7 @@ const SuperAdmin = () => {
   const fetchPandits = async () => {
     try {
       const res = await axios.get(
-        "https://trivid-backend.onrender.com/api/v1/superadmin/get-admin-list",
+        "http://localhost:4000/api/v1/superadmin/get-admin-list",
         { withCredentials: true }
       );
       if (res.status === 200) {
@@ -47,9 +47,9 @@ const SuperAdmin = () => {
   }, [refresh]);
 
   return (
-    <div className="flex">
+    <div>
       <Sidebar />
-      <div className="flex-1 p-6 bg-white">
+      <div className="p-6 bg-white">
         <Routes>
           <Route
             path="profile"
