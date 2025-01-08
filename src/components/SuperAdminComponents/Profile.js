@@ -30,7 +30,7 @@ const Profile = ({ superDetails, toggleRefresh }) => {
     toast.dismiss();
     try {
       const res = await axios.patch(
-        "http://localhost:4000/api/v1/superadmin/details/update",
+        "https://trivid-backend.onrender.com/api/v1/superadmin/details/update",
         formData,
         { withCredentials: true }
       );
