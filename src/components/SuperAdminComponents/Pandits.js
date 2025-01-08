@@ -20,7 +20,7 @@ const Pandits = ({ pandits, toggleRefresh }) => {
   const handleUpdate = async () => {
     try {
       const res = await axios.patch(
-        `http://localhost:4000/api/v1/superadmin/admin-update/${selectedPandit._id}`,
+        `https://trivid-backend.onrender.com/api/v1/superadmin/admin-update/${selectedPandit._id}`,
         formData,
         { withCredentials: true }
       );
