@@ -15,7 +15,7 @@ const Admin = () => {
   const fetchDetails = async () => {
     try {
       const res = await axios.get(
-        "https://trivid-backend.onrender.com/api/v1/admin/details",
+        "http://localhost:4000/api/v1/admin/details",
         {
           withCredentials: true,
         }
@@ -33,7 +33,7 @@ const Admin = () => {
   const fetchPandits = async () => {
     try {
       const res = await axios.get(
-        "https://trivid-backend.onrender.com/api/v1/superadmin/get-admin-list",
+        "http://localhost:4000/api/v1/superadmin/get-admin-list",
         { withCredentials: true }
       );
       if (res.status === 200) {
@@ -51,8 +51,10 @@ const Admin = () => {
   }, [refresh]);
 
   return (
-    <div className="flex">
+    <div className="flex flex-col min-h-screen">
+      {/* Horizontal Sidebar */}
       <Sidebar />
+      {/* Content Area */}
       <div className="flex-1 p-6 bg-white">
         <Routes>
           <Route
@@ -83,6 +85,7 @@ const Admin = () => {
           />
         </Routes>
       </div>
+      {/* Toast Notifications */}
       <ToastContainer
         position="top-center"
         autoClose={5000}
